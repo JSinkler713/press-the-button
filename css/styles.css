@@ -25,6 +25,9 @@ body {
   width: 40px;
   margin: 20px auto 0px auto;
   background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .press-button {
   width: 100px;
