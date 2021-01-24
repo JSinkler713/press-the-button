@@ -44,8 +44,15 @@ const checkThere = ()=> {
 let intervalRef
 const startTime = ()=> {
   intervalRef = setInterval(()=> {
-    timer.innerHTML = `Timer: ${time}`
     time--
+    timer.innerHTML = `Timer: ${time}`
+    if (time === 0) {
+      console.log('gameOver')
+      // clear interval
+      // toggle gameOver screen to show
+      clearInterval(intervalRef)
+
+    }
   }, 1000)
 }
 
