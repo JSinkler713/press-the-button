@@ -37,3 +37,9 @@ body {
   background-color: purple;
   height: 0;
 }
+.timer {
+  font-size: 1.5rem;
+  width: 125px;
+  height: 50px;
+  background-color: #f1f2f3;
+}

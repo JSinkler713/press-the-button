@@ -8,8 +8,13 @@ let pressButton=document.createElement('button')
 pressButton.classList.add('press-button')
 const yesButton = document.querySelector('button')
 const modal = document.querySelector('.modal')
+const timer = document.createElement('div')
+timer.classList.add('timer')
+timer.innerHTML = `Timer: 30`
 let points = 0
 let level = 1
+let time = 30
+
 
 
 const toggleModal = ()=> {  
@@ -24,6 +29,7 @@ const addGameEls = ()=>{
   main.appendChild(containerEl)
   containerEl.appendChild(innerDiv)
   main.appendChild(pressButton)
+  main.prepend(timer)
 }
 const checkThere = ()=> {
   if (level === 1) {
@@ -31,10 +37,17 @@ const checkThere = ()=> {
       console.log('you made it')
       // disable button
       pressButton.removeEventListener('click', buttonPress)
+      clearInterval(intervalRef)
     }
   }
 }
-
+let intervalRef
+const startTime = ()=> {
+  intervalRef = setInterval(()=> {
+    timer.innerHTML = `Timer: ${time}`
+    time--
+  }, 1000)
+}
 
 
 
@@ -46,6 +59,7 @@ yesButton.addEventListener('click', ()=>{
 modal.addEventListener('click', ()=> {
   toggleModal()
   addGameEls()
+  startTime()
 })
 const buttonPress = ()=> {
   points += 10
