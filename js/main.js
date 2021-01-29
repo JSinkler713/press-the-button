@@ -15,8 +15,6 @@ let points = 0
 let level = 1
 let time = 30
 
-
-
 const toggleModal = ()=> {  
   document.querySelector('.modal').classList.toggle('hidden')
 }
@@ -55,8 +53,6 @@ const startTime = ()=> {
     }
   }, 1000)
 }
-
-
 
 yesButton.addEventListener('click', ()=>{
   removeEls()
